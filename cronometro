@@ -1,0 +1,16 @@
+#!/bin/bash
+
+alarme=$1
+lembrete=$2
+mensagem=$3
+
+echo "Alarme definido para: "$alarme" segundos";
+echo "Mensagem: "$mensagem;
+echo "Lembrete para: "$lembrete" segundos";
+
+while true; do
+  sleep $alarme;
+  notify-send "$mensagem";
+  alarme=$lembrete;
+  echo "Alarme emitido";
+done
